@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    char someString[10] = {'a','b','c','d','e','f','g','h','i','j'};
+
+    char *psomeString = someString;
+
+    cout << "psomeString = " << psomeString << "\n" << endl;
+
+    char *ppLocation3 = &someString[3];
+    char *ppLocation0 = &someString[0];
+
+    cout << "ppLocation6 = " << &ppLocation3 << endl;
+    cout << "ppLocation0 = " << &ppLocation0 << endl;
+    cout << "difference = " << ppLocation3 - ppLocation0 << endl;
+
+
+    cout << "\n\n\n" << endl;
+
+
+    int someArray[10] = { 3, 6, 9, 12, 15, 18, 21, 24, 27, 30}; //40 bytes of memory
+
+    for(int i = 0; i<10; i++)
+    {
+        cout << someArray + i << " = " << *(someArray + i) << endl;
+        //cout << pLocation0 << " = " << *pLocation0 << endl;
+    }
+
+    int *pLocation6 = &someArray[6]; //4 bytes of memory
+    int *pLocation0 = &someArray[0]; //4 bytes of memory
+
+    cout << "\n\n\npLocation6: " << *pLocation6 << endl;
+    cout << "Memory address: " << pLocation6 << endl;
+    cout << "\npLocation0: " << *pLocation0 << endl;
+    cout << "Memory address: " << pLocation0 << endl;
+
+    int theDiff = pLocation6 - pLocation0;
+    cout << "\n The difference is: " << theDiff << endl;
+
+
+    cout << endl; system("pause"); return 0;
+}
